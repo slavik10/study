@@ -3,6 +3,22 @@
 #include <iomanip>
 using namespace std;
 
+void ChangeVariables(int* a, int* b) {
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+void ChangeArrays(int* arr, int* arr2, int size) {
+	for(int i = 0; i < size; i++) {
+		ChangeVariables(&arr[i], &arr2[i]);
+	}
+}
+void ChangeArrays(int* arr, int* arr2, int size, int step) {
+	for(int i = 0; i < size; i++) {
+		ChangeVariables(&arr[i * step], &arr2[i * step]);
+	}
+}
+
 void WriteMatrix(int* arr, int row, int col) {
 	for(int i = 0; i < row; i++) {
 		for	(int j = 0; j < col; j++) {
@@ -34,11 +50,6 @@ int FindMaxInMatrix(int* arr, int row, int col) {
 	return max;
 }
 
-void ChangeVariables(int* a, int* b) {
-	int tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
 void ReverseMainDiagonal(int* arr, int row, int col) {
 	for(int i = 0; i < row; i++) {
 		for	(int j = 0; j < i; j++) {
@@ -56,7 +67,16 @@ void ReverseSecondaryDiagonal(int* arr, int row, int col) {
 		cout << endl;
 	}
 }
-
+void ReverseByRows(int* arr, int row, int col) {
+	for(int i = 0; i < row / 2; i++) {
+		ChangeArrays(&arr[i * col], &arr[(row - 1 - i) * col], col);
+	}
+}
+void ReverseByColumns(int* arr, int row, int col) {
+	for(int i = 0; i < col / 2; i++) {
+		ChangeArrays(&arr[i], &arr[col - 1 - i], row, col);
+	}
+}
 
 /*void WriteColumnsInMatrix(int* arr, int row, int col) {
 	for(int i = 0; i < col; i++) {
