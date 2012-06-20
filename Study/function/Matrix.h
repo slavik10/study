@@ -12,5 +12,5 @@ int FindMinInMatrix(int* arr, int row, int col);
 int FindMaxInMatrix(int* arr, int row, int col);
 
 void ChangeVariables(int* a, int* b);
-void Reverse(int* arr, int row, int col);
-void BackReverse(int* arr, int row, int col);
+void ReverseMainDiagonal(int* arr, int row, int col);
+void ReverseSecondaryDiagonal(int* arr, int row, int col);
