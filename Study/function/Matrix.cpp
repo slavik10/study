@@ -39,7 +39,7 @@ void ChangeVariables(int* a, int* b) {
 	*a = *b;
 	*b = tmp;
 }
-void ReverseMatrix(int* arr, int row, int col) {
+void Reverse(int* arr, int row, int col) {
 	for(int i = 0; i < row; i++) {
 		for	(int j = 0; j < i; j++) {
 			ChangeVariables(&arr[i * col + j], &arr[j * col + i]);
@@ -47,7 +47,7 @@ void ReverseMatrix(int* arr, int row, int col) {
 		cout << endl;
 	}
 }
-void BackReverseMatrix(int* arr, int row, int col) {
+void BackReverse(int* arr, int row, int col) {
 	for(int i = 0; i < row; i++) {
 		for	(int j = col - 1; (col - j - 1) < i; j--) {
 			//cout <<"["<< i << "][" << j << "] vs [" << column - j - 1 << "][" << row - i - 1 <<"]"<< endl;
@@ -60,7 +60,7 @@ void BackReverseMatrix(int* arr, int row, int col) {
 
 /*void WriteColumnsInMatrix(int* arr, int row, int col) {
 	for(int i = 0; i < col; i++) {
-		//óêàçàòåëü íà ýëåìåíò â ïåðâîé ñòðîêå, êîë-âî ñòðîê, øàã(â äàííîì ñëó÷àå êîë-âî ñòîëáöîâ)
+		//ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒ Ð½Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð² Ð¿ÐµÑ€Ð²Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐµ, ÐºÐ¾Ð»-Ð²Ð¾ ÑÑ‚Ñ€Ð¾Ðº, ÑˆÐ°Ð³(Ð² Ð´Ð°Ð½Ð½Ð¾Ð¼ ÑÐ»ÑƒÑ‡Ð°Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÑÑ‚Ð¾Ð»Ð±Ñ†Ð¾Ð²)
 		WriteArray(&(arr[i]), row, col);
 	}
 }*/
@@ -73,8 +73,8 @@ void WriteArray(int* arr, int size) {
 }
 bool ArrayIsAsc(int* arr, int size) {
 	for(int i = 0; i < size - 1; i++) {
-		//åñëè òåêóùèé ýëåìåíò áîëüøå ñëåäóþùåãî,
-		//òî ìàññèâ íå â ïîðÿäêå âçâðàñòàíèÿ
+		//ÐµÑÐ»Ð¸ Ñ‚ÐµÐºÑƒÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð±Ð¾Ð»ÑŒÑˆÐµ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ³Ð¾,
+		//Ñ‚Ð¾ Ð¼Ð°ÑÑÐ¸Ð² Ð½Ðµ Ð² Ð¿Ð¾Ñ€ÑÐ´ÐºÐµ Ð²Ð·Ð²Ñ€Ð°ÑÑ‚Ð°Ð½Ð¸Ñ
 		if(arr[i] > arr[i + 1])
 			return false;
 	}
@@ -82,7 +82,7 @@ bool ArrayIsAsc(int* arr, int size) {
 }
 bool ArrayIsDesc(int* arr, int size) {
 	for(int i = 0; i < size - 1; i++) {
-		//åñëè ñëåä ýëåìåíò áîëüøå òåêóùåãî, òî ìàññèâ íå â ïîðÿäêå óáûâàíèÿ
+		//ÐµÑÐ»Ð¸ ÑÐ»ÐµÐ´ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð±Ð¾Ð»ÑŒÑˆÐµ Ñ‚ÐµÐºÑƒÑ‰ÐµÐ³Ð¾, Ñ‚Ð¾ Ð¼Ð°ÑÑÐ¸Ð² Ð½Ðµ Ð² Ð¿Ð¾Ñ€ÑÐ´ÐºÐµ ÑƒÐ±Ñ‹Ð²Ð°Ð½Ð¸Ñ
 		if(arr[i] < arr[i + 1])
 			return false;
 	}
