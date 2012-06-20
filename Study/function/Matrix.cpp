@@ -39,7 +39,7 @@ void ChangeVariables(int* a, int* b) {
 	*a = *b;
 	*b = tmp;
 }
-void Reverse(int* arr, int row, int col) {
+void ReverseMainDiagonal(int* arr, int row, int col) {
 	for(int i = 0; i < row; i++) {
 		for	(int j = 0; j < i; j++) {
 			ChangeVariables(&arr[i * col + j], &arr[j * col + i]);
@@ -47,7 +47,7 @@ void Reverse(int* arr, int row, int col) {
 		cout << endl;
 	}
 }
-void BackReverse(int* arr, int row, int col) {
+void ReverseSecondaryDiagonal(int* arr, int row, int col) {
 	for(int i = 0; i < row; i++) {
 		for	(int j = col - 1; (col - j - 1) < i; j--) {
 			//cout <<"["<< i << "][" << j << "] vs [" << column - j - 1 << "][" << row - i - 1 <<"]"<< endl;
