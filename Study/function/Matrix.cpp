@@ -19,7 +19,7 @@ void ChangeArrays(int* arr, int* arr2, int size, int step) {
 	}
 }
 
-void WriteMatrix(int* arr, int row, int col) {
+void PrintMatrix(int* arr, int row, int col) {
 	for(int i = 0; i < row; i++) {
 		for	(int j = 0; j < col; j++) {
 			cout << setw(4) << arr[i * col + j];
@@ -78,14 +78,14 @@ void ReverseByColumns(int* arr, int row, int col) {
 	}
 }
 
-/*void WriteColumnsInMatrix(int* arr, int row, int col) {
+/*void PrintColumnsInMatrix(int* arr, int row, int col) {
 	for(int i = 0; i < col; i++) {
 		//указатель на элемент в первой строке, кол-во строк, шаг(в данном случае кол-во столбцов)
-		WriteArray(&(arr[i]), row, col);
+		PrintArray(&(arr[i]), row, col);
 	}
 }*/
 
-void WriteArray(int* arr, int size) {
+void PrintArray(int* arr, int size) {
 	for(int i = 0; i < size; i++) {
 		cout << setw(4) << arr[i];
 	}
@@ -109,7 +109,7 @@ bool ArrayIsDesc(int* arr, int size) {
 	return true;
 }
 
-void WriteArray(int* arr, int size, int step) {
+void PrintArray(int* arr, int size, int step) {
 	for(int i = 0; i < size; i++) {
 		cout << setw(4) << arr[i * step];
 	}
